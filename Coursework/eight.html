@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Exercises</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 2px solid darkgray;
+            padding: 8px;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+
+        tr:nth-child(odd) {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="searchInput" placeholder="Search by name, position, or salary"></input>
+        <table id="dbDisplay">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const employees = [{
+            "name": "Alice",
+            "position": "Software Engineer",
+            "salary": 85000
+            },
+
+            {
+            "name": "Bob",
+            "position": "Data Analyst",
+            "salary": 72000
+            },
+            {
+            "name": "Bobby",
+            "position": "Data Analyst",
+            "salary": 72000
+            },
+
+            {
+            "name": "Charlie",
+            "position": "Marketing Manager",
+            "salary": 68000
+            },
+
+            {
+            "name": "David",
+            "position": "Product Designer",
+            "salary": 80000
+            },
+
+            {
+            "name": "Emma",
+            "position": "Financial Analyst",
+            "salary": 75000
+            },
+
+            {
+            "name": "Fiona",
+            "position": "Human Resources Coordinator",
+            "salary": 60000
+            },
+
+            {
+            "name": "George",
+            "position": "Sales Representative",
+            "salary": 67000
+            },
+
+            {
+            "name": "Hannah",
+            "position": "Operations Manager",
+            "salary": 90000
+            },
+
+            {
+            "name": "Ian",
+            "position": "Customer Support Specialist",
+            "salary": 55000
+            },
+
+            {
+            "name": "Jessica",
+            "position": "Accountant",
+            "salary": 78000
+            },
+            {
+                "name":"Emily",
+                "position":"Accountant",
+                "salary": 78000
+            }]
+
+        const tableBody = document.querySelector("#dbDisplay tbody");
+        const searchInput = document.getElementById("searchInput");
+
+        // Function to filter and display employees based on name, position, or salary
+        function displayFilteredEmployees() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredEmployees = employees.filter(employee => {
+                return employee.name.toLowerCase().includes(searchTerm) ||
+                       employee.position.toLowerCase().includes(searchTerm) ||
+                       employee.salary.toString().includes(searchTerm);
+            });
+
+            // Clear previous display
+            tableBody.innerHTML = '';
+
+            // Display filtered employees
+            filteredEmployees.forEach(employee => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${employee.name}</td>
+                    <td>${employee.position}</td>
+                    <td>${employee.salary}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Event listener for input changes in search input
+        searchInput.addEventListener("input", displayFilteredEmployees);
+
+        // Initial display of all employees
+        displayFilteredEmployees();
+    </script>
+</body>
+</html>

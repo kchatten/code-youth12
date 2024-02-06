@@ -1,0 +1,52 @@
+.testContMain{
+    border: 2px solid;
+    background-color: rgb(44, 44, 44);
+    height: 300px ; 
+    width: 500px ;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+    
+.testContHeader{
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+
+}
+
+.testContHeaderContent{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 30%;
+
+    color:white;
+    background-color: rgb(44, 44, 44);
+    border: none;
+}
+
+.testContHeaderContent:hover{
+    background-color: darkgray;
+}
+
+.testContContent{
+    display: inline-flex;
+    background-color: limegreen;
+    height: 235px;
+    width: 100%;
+}
+
+.selected{
+    background-color: limegreen;
+}
+
+#text{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+

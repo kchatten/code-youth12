@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Exercises</title>
+</head>
+<body>
+    <style>
+
+        #divMaster{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        #btnExample{
+            border: 2px black;
+        }
+
+        #palette1{
+            border: 2px solid black;
+            height: 50px;
+            width: 50px;
+            background-color: greenyellow;
+        }
+        #palette2{
+            border: 2px solid black;
+            height: 50px;
+            width: 50px;
+            background-color: red;
+        }
+        #palette3{
+            border: 2px solid black;
+            height: 50px;
+            width: 50px;
+            background-color: blue;
+        }
+    </style>
+
+<div id="divMaster">
+    <div>
+        <h1>SOME TEXT</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ligula sit amet sem posuere volutpat eu eu augue. Aenean feugiat feugiat nibh, sit amet fermentum ante porta eget. Quisque malesuada neque eu elit pharetra ultricies. Pellentesque pretium leo libero, vitae dignissim nulla volutpat a. Nullam consectetur lectus quis tellus consequat, at bibendum metus eleifend. Vivamus dapibus eros velit, id sagittis tellus rhoncus vitae. Quisque at neque non tortor porttitor iaculis vel sit amet elit. Aenean congue dolor vitae felis scelerisque maximus. Morbi fermentum magna ut tortor pharetra, non auctor lectus tempus. Suspendisse lacinia nunc urna, sed pharetra quam semper at. Aliquam scelerisque consequat ligula, sed bibendum augue ultricies quis. Maecenas ultricies tortor at sapien luctus, vitae feugiat erat iaculis. Nulla finibus augue sit amet massa fermentum feugiat. Proin in justo at tellus volutpat rhoncus. Morbi a nisi sit amet sem fermentum maximus id at urna.
+
+            In hac habitasse platea dictumst. Donec blandit rutrum rhoncus. Nunc sem libero, dignissim non finibus at, egestas in tortor. Integer euismod volutpat mattis. Fusce interdum urna nunc, in volutpat massa ullamcorper sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi suscipit lacus tortor, et tempus purus ullamcorper ut.
+            
+            Morbi sed mi vitae dui pharetra imperdiet lacinia ut lectus. Maecenas pellentesque pharetra magna, nec ornare diam. Fusce dignissim felis vel laoreet malesuada. Suspendisse augue nisl, porttitor nec tempus accumsan, dapibus ut nisl. Aenean mattis enim volutpat hendrerit aliquam. Quisque ullamcorper, felis id placerat convallis, lacus leo porta ligula, eget dapibus mauris ante nec erat. Nam ex nisl, posuere sed ex id, varius consequat mauris. Vivamus cursus nibh elit, quis volutpat ex lobortis nec. Integer eleifend urna euismod, rhoncus urna ut, rutrum elit. Nullam quis est quis arcu feugiat fringilla id a justo. Vivamus condimentum metus id mi tincidunt fringilla.
+            
+            Nulla sed felis quis libero bibendum sagittis. Integer sed mattis tortor. Pellentesque id augue erat. Nullam placerat, magna id pharetra ullamcorper, mi magna tempor ex, vitae consequat ligula orci eu sem. Nulla quis aliquam lorem. Duis efficitur lorem in nibh tristique, eget pretium tortor lacinia. Vestibulum at pulvinar mi. Quisque tincidunt odio at nulla tincidunt, id cursus libero hendrerit. Aliquam erat volutpat. Vivamus vitae placerat est. Sed interdum, sem sit amet pharetra efficitur, magna felis rutrum est, vitae gravida est elit quis mauris. Aenean sagittis mi at augue laoreet consequat.
+            
+            Donec fringilla, erat dapibus tempor efficitur, dui est consequat turpis, a blandit tellus felis eu tellus. Donec vehicula enim a imperdiet venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque consequat semper tincidunt. Curabitur porta egestas ante gravida porta. In eget est eget odio tempus ornare non id sapien. Sed consequat tincidunt nisl sit amet convallis. Cras id vestibulum nulla. Quisque tortor nunc, dapibus sed blandit sit amet, eleifend quis lacus. Curabitur efficitur fringilla leo, ut volutpat ante pharetra ut. Sed vulputate eleifend turpis, a placerat erat rhoncus sit amet. Integer sit amet ligula congue, interdum lorem ut, feugiat nisl.</p>
+        <button id="btnExample">Button</button>
+    </div>
+    <br>
+    <div>
+        <button id="palette1"></button>
+        <button id="palette2"></button>
+        <button id="palette3"></button>
+    </div>
+</div>
+
+
+    <script>
+
+        let bgColor;
+        let txtColor;
+        let btnBgColor;
+        let btnTxtColor;
+
+        document.getElementById("palette1").addEventListener("click", function(){
+            bgColor = "green";
+            txtColor = "yellow";
+            btnBgColor = "green";
+            btnTxtColor = "yellow";
+            UpdatePalette();
+        })
+
+        document.getElementById("palette2").addEventListener("click", function(){
+            bgColor = "red";
+            txtColor = "black";
+            btnBgColor = "yellow";
+            btnTxtColor = "black";
+            UpdatePalette();
+        })
+
+        document.getElementById("palette3").addEventListener("click", function(){
+            bgColor = "blue";
+            txtColor = "white";
+            btnBgColor = "lightblue";
+            btnTxtColor = "white";
+            UpdatePalette();
+        })
+
+        function UpdatePalette(){
+            document.body.style.backgroundColor = bgColor;
+            document.body.style.color = txtColor;
+            document.getElementById("btnExample").style.backgroundColor = btnBgColor;
+            document.getElementById("btnExample").style.color = btnTxtColor;
+        }
+
+    </script>
+</body>
+</html>

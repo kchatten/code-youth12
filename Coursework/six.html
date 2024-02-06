@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Exercises</title>
+</head>
+<body>
+    
+
+    <style>
+
+        #overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #overlayContent{
+            display: flex;
+            background-color: white;
+            height: 250px;
+            width: 250px;
+            border-radius: 25px;
+            justify-content: center;
+        }
+
+        #header{
+            height: 100px;
+            width: 100%;
+            background-color: cadetblue;
+
+            display:flex;
+            justify-content: space-between;
+        }   
+
+        #headerTitle{
+            font-size:xx-large;
+            font-weight: bold;
+            margin: 0px;
+        }
+
+        #headerContLeft{
+            display: flex;
+
+            flex-direction: column;
+            justify-content: space-between;
+            
+            margin: 5px;
+        }
+
+        #headerContRight{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            margin: 5px;
+        }
+
+        #formLogin{
+            position: absolute;
+            height: 250px;
+            width: 250px;
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+
+        }
+        
+        #formSignup{
+            position: absolute;
+            height: 250px;
+            width: 250px;
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .txtBig{
+            font-size:larger;
+            font-weight: bold;
+        }
+        .orientBottom{
+            margin: 5px;
+        }
+
+        .btnText:hover{
+            color: blue;
+        }
+
+        .btnText{
+            background-color: transparent;
+            border: transparent;
+            font-size: larger;
+            height: 25px;
+        }
+
+    </style>
+
+<div id="overlay">
+    <div id="overlayContent">
+        <div id="formLogin">
+            <p class="txtBig">Login</p>
+            <form class="form">
+            <input class="form" type="text" placeholder="Username"></input>
+            <input class="form" type="text" placeholder="Password"></input>
+            </form>
+            <input type="submit"></input>
+        </div>
+        <div id="formSignup"> 
+            <p class="txtBig">Sign Up</p>
+            <form class="form">
+            <input type="email" placeholder="E-mail"></input>
+            </form>
+            <button>Next</button>
+        </div>
+    </div>
+</div>
+
+<div id="header">
+
+    <div id="headerContLeft">
+
+        <p id="headerTitle">Title</p>
+
+        <div id="headerContLeftSub">
+            <button class="btnText">Home</button>
+            <button class="btnText">About</button>
+            <button class="btnText">Contact Us</button>
+        </div>
+
+    </div>
+
+    <div id="headerContRight">
+        <button class="btnText" id="btnLogin">Login</button>
+        <p class="orientBottom"> || </p>
+        <button class="btnText" id="btnSignup">Sign Up</button>
+    </div>
+
+</div>
+
+    <script>
+        
+        let lastClicked;
+        let isDirty;
+        let formSignup = document.getElementById("formSignup");
+        let formLogin = document.getElementById("formLogin");
+
+        OverlayOff();
+
+        document.body.addEventListener("click", function(){
+
+            if(window.getComputedStyle(formSignup).display === "none" && window.getComputedStyle(formLogin).display === "none"){
+                console.log("doing nothing");
+            }
+            else{
+                OverlayOff();
+            }
+        }
+        )
+        
+        document.getElementById("btnSignup").addEventListener("click", function(){
+            lastClicked = "signup";
+            document.getElementById("formLogin").style.display = "none";
+            OverlayOn();
+            event.stopPropagation();
+        })
+
+        document.getElementById("btnLogin").addEventListener("click", function(){
+            lastClicked = "login";
+            document.getElementById("formSignup").style.display = "none";
+            OverlayOn();
+            event.stopPropagation();
+        })
+
+        function OverlayOn(){
+            document.getElementById("overlay").style.display = "flex";
+            console.log(lastClicked)
+            if (lastClicked == "login")
+            {
+                document.getElementById("formLogin").style.display = "flex";
+            }
+            else if (lastClicked == "signup"){
+                document.getElementById("formSignup").style.display = "flex";
+            }
+        }
+
+        function OverlayOff(){
+            document.getElementById("overlay").style.display = "none";
+            console.log("turning off overlay");
+        }
+
+
+    </script>
+</body>
+</html>

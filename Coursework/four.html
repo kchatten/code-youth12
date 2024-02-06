@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Four Activities</title>
+</head>
+<body>
+
+    <style>
+
+
+    </style>
+
+
+    <hr>
+    <p>Exercise 1</p>
+    <hr>
+
+    <div class="container1"></div>
+
+    <hr>
+    <p>Exercise 2</p>
+    <hr>
+
+    <div class="container2"></div>
+
+    <hr>
+    <p>Exercise 3</p>
+    <hr>
+
+    <div class="container3"></div>
+
+    <hr>
+    <p>Exercise 4</p>
+    <hr>
+
+    <div class="container4">    
+
+        <p>
+        <span class="highlight">Learning Latin</span> 
+        can provide practical benefits such as 
+        <span class="highlight">expanding vocabulary,</span> 
+        understanding legal, medical, and scientific terminology, and 
+        <span class="highlight">gaining a better understanding of English grammar.</span> 
+        However, these benefits alone aren't very good reasons to learn the whole language. Research shows that 
+        <span class="highlight">learning Latin leads to children scoring higher in other curriculum areas.</span> 
+        Learning Latin can also broaden your horizons and help you understand the culture around you and its origins. Latin is valuable if you want to learn other Romance languages because those languages are derived at least partly from Latin.
+        <span class="highlight">Additionally, learning Latin can improve language acquisition skills and make you better at speaking English.</span> 
+        </p>
+
+    </div>
+
+    <script>
+
+    // ------------------  THIS IS THE FIRST EXERCISE ------------------ 
+
+    // Create a reference to the container div to hold our content.
+    const container1 = document.querySelector(".container1");
+
+
+    // Creates a reference & the button to display the yellow square.
+    const btnYellow = document.createElement("button");
+    // Changes the text content to be descriptive.
+    btnYellow.textContent = "yellow";
+    // Adds an event listener to the button that will run the function DisplayYellowBox()
+    btnYellow.addEventListener("click", DisplayYellowBox);
+    // Appends the button to the base canvas.
+    document.body.appendChild(btnYellow);
+    // Move the button from the base canvas into the Exercise 1 container div.
+    container1.appendChild(btnYellow);
+
+
+    // Creates a function for displaying the yellow box.
+    function DisplayYellowBox() {
+
+    // Creates a reference & the div that becomes the yellow square.
+    const boxYellow = document.createElement("div");
+    // Defines the div's style.
+    boxYellow.style = "border: 2px solid black; height: 100px; width: 100px; background-color: yellow;";
+    // Appends the square to the screen.
+    document.body.appendChild(boxYellow);
+    // Move the square into the Exercise1 container div.
+    container1.appendChild(boxYellow);
+    }
+
+    // Creates a reference & the button to display the green square.
+    const btnGreen = document.createElement("button");
+    // Changes the text content to be descriptive.
+    btnGreen.textContent = "green";
+    // Adds an event listener to the button that will run the function DisplayGreenBox()
+    btnGreen.addEventListener("click", DisplayGreenBox);
+    // Appends the button to the base canvas.
+    document.body.appendChild(btnGreen);
+    // Move the button from the base canvas into the Exercise 1 container div.
+    container1.appendChild(btnGreen);
+
+    // Creates a function for displaying the green box.
+    function DisplayGreenBox() {
+
+    // Creates a reference & the div that becomes the green  square.
+    const boxGreen = document.createElement("div");
+    // Defines the div's style.
+    boxGreen.style = "border: 2px solid black; height: 100px; width: 100px; background-color: green;";
+    // Appends the square to the screen.
+    document.body.appendChild(boxGreen);
+    // Move the square into the Exercise1 container div.
+    container1.appendChild(boxGreen);
+    }
+
+    // ------------------ THIS IS THE SECOND EXERCISE ------------------ 
+
+    // Create a reference to the container that will hold our content.
+    const container2 = document.querySelector(".container2")
+
+    // Create a reference & the button for creating a div.
+    const btnAddBox = document.createElement("button");
+    // Change the text content to be descriptive.
+    btnAddBox.textContent = "Create a bordered <div>";
+    // Add an event listener.
+    btnAddBox.addEventListener("click", CreateBorderedDiv);
+    // Appends the button to the base canvas.
+    document.body.appendChild(btnAddBox);
+    // Move the button into the Exercise2 container div.
+    container2.appendChild(btnAddBox);
+
+
+    // Create a reference & the button for removing a div.
+    const btnDestoryBox = document.createElement("button");
+    // Change the text content to be descriptive.
+    btnDestoryBox.textContent = "Destroy a bordered <div>";
+    // Add an event listener.
+    btnDestoryBox.addEventListener("click", DestroyBorderedDiv);
+    // Appends the button to the base canvas.
+    document.body.appendChild(btnDestoryBox);
+    // Move the button into the Exercise2 container div.
+    container2.appendChild(btnDestoryBox);
+
+
+    function CreateBorderedDiv()
+    {
+    // Create a reference & the div.
+    const newDiv = document.createElement("div");
+    // Define the div's style.
+    newDiv.style = "border: 2px solid black; height: 50px; width: 50px;"
+    // Add an ID.
+    newDiv.setAttribute("id", "Exercise2")
+    // Append.
+    document.body.appendChild(newDiv);
+    // Move.
+    container2.appendChild(newDiv);
+    }
+
+    function DestroyBorderedDiv()
+    {
+    // Create a reference to the divs that needs to be destroyed.
+    const divToDestroy = document.getElementById("Exercise2");
+    // Remove it.
+    divToDestroy.remove();
+
+    } 
+
+    // ------------------ THIS IS THE THIRD EXERCISE ------------------ 
+
+    // Create a reference to the container that will hold our content.
+    const container3 = document.querySelector(".container3");
+
+    // Create a for loop.
+
+    for (let i = 0; i < 5; i++)
+    {
+    // Create a reference & a new div every time the loop runs.
+        const loopDiv = document.createElement("div");
+    // Style the div.
+        loopDiv.style = "display: flex; justify-content: center; align-items: center; border: 2px solid black; height: 25px; width: 25px;"
+    // Add the divs index position as its text content.
+        loopDiv.textContent = i;
+    // Append the div to the container.
+        container3.appendChild(loopDiv);
+    }
+
+     // ------------------ THIS IS THE FOURTH EXERCISE ------------------ 
+
+     // Create a reference to the container that will hold our content.
+     const container4 = document.querySelector(".container4");
+
+     // Create a reference & the button to highlight.
+     const btnHighlight = document.createElement("button");
+
+     // Change the text content to be descriptive.
+     btnHighlight.textContent = "Highlight";
+     // Add an event listener.
+     btnHighlight.addEventListener("click", HighlightText);
+     // Append the button to the base canvas.
+     document.body.appendChild(btnHighlight);
+     // Move it into the container.
+     container4.appendChild(btnHighlight);
+
+     // Create a reference & the button to remove the highlight.
+     const btnRemoveHighlight = document.createElement("button");
+     // Change the text content to be descriptive.
+     btnRemoveHighlight.textContent = "Remove Highlight";
+     // Add an event listener.
+     btnRemoveHighlight.addEventListener("click", RemoveHighlights);
+     // Append the button to the base canvas.
+     document.body.appendChild(btnRemoveHighlight);
+     // Move it into the container.
+     container4.appendChild(btnRemoveHighlight);
+
+
+     // Create the function to highlight the desired text.
+     function HighlightText()
+     {
+     // Create a variable to store the !!!! NODE LIST !!!! of span elements
+     var textToHighlight = document.querySelectorAll("span");    
+     // Create a forloop that iterates through the resulting node list and changes each elements background to yellow.
+        for (let i = 0; i < textToHighlight.length; i++) {
+            textToHighlight[i].style.backgroundColor = "yellow";
+        }    
+     }
+
+     // Create the function to remove the highlight from desired text.
+     function RemoveHighlights()
+     {
+     // Create a variable to store the !!!! NODE LIST !!!! of span elements
+     var textToRemoveHighlightsFrom = document.querySelectorAll("span");
+     // Create a forloop that iterates through the resulting node list and changes each elements background to transparent.
+         for (let i = 0; i < textToRemoveHighlightsFrom.length; i++) {
+            textToRemoveHighlightsFrom[i].style.backgroundColor = "transparent";
+        }    
+     }
+    </script>
+</body>
+</html>

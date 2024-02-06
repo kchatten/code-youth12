@@ -1,0 +1,134 @@
+
+/* This is the gray baseplate of the calculator*/
+
+.calculatorBase{
+    
+    /*Set dimensions*/
+    height: 400px;
+    width: 250px;
+
+    /*Make it pretty*/
+    background-color: gray;
+    border: 5px solid lightgray;
+
+    /*Align everything*/
+    display: block;
+    
+
+}
+
+/* This is the 'LCD' screen */
+
+.calculatorDisplay{
+
+    /*Set Dimensions*/
+    height: 50px;
+    width: 200px;
+
+    /*Make it pretty*/
+    background-color: darkcyan;
+    margin: 25px;
+    filter:drop-shadow(5px 5px darkgreen);
+
+    /*Align everything*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5px;
+}
+
+.displayText{
+
+    /*Make it pretty*/
+    font-weight: bolder;
+    font-size: x-large;
+    color:darkslategrey;
+}
+
+/* This is the tray div containing the operator (+, -, *, /) buttons */
+
+.operatorTray{
+    
+    /*Align everything*/
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    gap: 5px;
+  
+}
+
+.operatorTray > button{
+
+    /*Set Dimensions*/
+    height: 50px;
+    width: 50px;
+
+    /*Make it pretty*/
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.operatorTray > button:hover{
+    background-color: yellow;
+}
+
+/* This is the tray div containing the number (0-9), decimal (.) and calculate (=) keys */
+
+.buttonTray{
+
+    /*Align everything*/
+    display: flex;
+    justify-content: space-evenly;    
+}
+
+.numPad{
+
+    /*Align everything*/
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    padding: 5px;
+}
+
+.numPad > button{
+
+    /*Set Dimensions*/
+    height: 50px;
+    width: 50px;
+    
+    /*Make it pretty*/
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.numPad > button:hover{
+    background-color: yellow;
+}
+
+.numPad > .calculateKey:hover{
+    background-color: greenyellow;
+}
+
+.clearKey{
+
+    /*Align everything */
+    padding: 5px;
+}
+
+.clearKey > button{
+
+    /*Set Dimensions*/
+    height: 50px;
+    width: 50px;
+
+
+    /*Make it pretty*/
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.clearKey >button:hover{
+    background-color: red;
+}
