@@ -1,0 +1,64 @@
+body{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    background-color: black;
+    color: white;
+}
+
+p{
+    text-indent: 20px;
+}
+
+.container{
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    width: 80vw;
+    overflow: hidden;
+}
+
+.content{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.txtRed{
+    color: red;
+}
+
+.txtBold{
+    font-weight: bold;
+}
+
+.txtFootnote{
+    font-size: small;
+    align-items: flex-end;
+}
+
+.txtDramatic1{
+    display: flex;
+    justify-content: center;
+    font-size:xx-large;
+    font-weight: 900;
+    font-style: italic;
+    color: red;
+}
+
+.txtDramatic2{
+    font-size: x-large;
+    font-weight: bolder;
+    color: gold;
+}
+
+a:link{
+    color: cornflowerblue;
+}
+
+a:visited{
+    color: red;
+}
+
+ a:hover{
+     color: white;
+}

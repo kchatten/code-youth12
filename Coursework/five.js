@@ -5,8 +5,8 @@ const btnCarl = document.getElementById("carl");
 const textToChange = document.getElementById("text");
 const nameToBold = document.createElement("p"); 
 
-// bgColorUnselected =  backgroundColor.rgb(44, 44, 44);
-// bgColorSelected = backgroundColor.rgb(0, 255, 0);
+const selectSquare = document.getElementById("selectSquare");
+
 
 btnAbigail.addEventListener("click", function(){
 
@@ -14,6 +14,12 @@ btnAbigail.addEventListener("click", function(){
     btnCarl.classList.remove("selected");
     
     btnAbigail.classList.add("selected");
+    btnAbigail.appendChild(selectSquare);
+
+    if (selectSquare.style.display !== "flex")
+    {
+        selectSquare.style.display = "flex";
+    }
 
     textToChange.innerHTML = "Wow I love this product so much it changed my life forever! —" + "<b>Abigail Anthony</b>";
 })
@@ -24,6 +30,13 @@ btnBoris.addEventListener("click", function(){
     
     btnBoris.classList.add("selected");
 
+    btnBoris.appendChild(selectSquare);
+
+    if (selectSquare.style.display !== "flex")
+    {
+        selectSquare.style.display = "flex";
+    }
+
     textToChange.innerHTML = "Wow I love this product so much it changed my life forever! —" + "<b>Boris Beretta</b>";
 })
 btnCarl.addEventListener("click", function(){
@@ -33,6 +46,12 @@ btnCarl.addEventListener("click", function(){
     
     btnCarl.classList.add("selected");
  
+    btnCarl.appendChild(selectSquare);
+
+    if (selectSquare.style.display !== "block")
+    {
+        selectSquare.style.display = "Block";
+    }
 
     textToChange.innerHTML = "Wow I love this product so much it changed my life forever! —" + "<b>Carl Carlson</b>";
 })

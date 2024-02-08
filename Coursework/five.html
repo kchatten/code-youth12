@@ -10,6 +10,31 @@
 
 <body>
     
+    <style>
+
+        #selectSquare{
+
+            display: none;
+            background-color: limegreen;
+;
+            position: relative;
+            top: 50%;
+            left: 0px;
+
+            transform: rotate(45deg);
+            
+            height: 20px;
+            width: 20px;
+
+            z-index: 3;
+        }
+
+        .btnFlex{
+            display:flex;
+            flex-direction: column;
+        }
+    </style>
+
     <hr>
     <div> Exercise 1 </div>
     <hr>
@@ -20,10 +45,10 @@
 
           <div class="testContHeader">
 
-                <button id="abigail" class="testContHeaderContent">Abigail Anthony</button>
-                <button id="boris" class="testContHeaderContent">Boris Beretta</button>
-                <button id="carl" class="testContHeaderContent">Carl Carlson</button>
-
+                <button id="abigail" class="testContHeaderContent btnFlex">Abigail Anthony</button>
+                <button id="boris" class="testContHeaderContent btnFlex">Boris Beretta</button>
+                <button id="carl" class="testContHeaderContent btnFlex">Carl Carlson</button>
+                <div id="selectSquare"></div>
          </div>
 
          </div>
@@ -37,6 +62,7 @@
     </div>
 
 <hr>
+<p>Use absolute positions for the names within the buttons to fix formatting instead of relying on justify-content et al.</p>
 <p>Header and content should instead pull from an array rather than be individually defined.</p>
 
 <script src="./five.js"></script>

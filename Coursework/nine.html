@@ -4,30 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 6 Exercises</title>
+    <link rel="stylesheet" href="./w3.css">
 </head>
 <body>
     <style>
 
+        .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        }
 
+        .right{
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        }
+
+        .left{
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        }
+
+        #sidebarMaster{
+            display: inline-flex;
+            margin-left: -200px;
+            transition: margin-left 1s;
+        }
+
+        #sidebar{
+            display:flex;
+            justify-content: center;
+            box-sizing: border-box;
+
+            border: 2px solid black;
+            height: 100vh;
+            width: 200px;
+        }
+        
+        #sidebarTray{
+            display:flex;
+            flex-direction: column;
+        }
+
+        #sidebarPopper{
+            border-style: outset;
+            background-color: transparent;
+            border-left-color: white;
+            height: 50px;
+            width: 50px;
+            margin-left: -2px;
+        }
+
+        #sidebarTrayPopper{
+            box-sizing: border-box;
+            padding-top: 25px;
+        }
+
+        .sidebarButton{
+            padding-top: 10px;
+            background-color: transparent;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            border: transparent;
+            text-decoration: underline;
+        }
+        .sidebarButton:hover{
+            color: blue;
+            
+        }
     </style>
     
-    <div>
-        <div>
-            <button>Home</button>
-            <button>About</button>
-            <button>Contact Us</button>
-            <button>Help</button>
-            <button>More</button>
+    <div id="sidebarMaster">
+    <div id="sidebar">
+        <div id="sidebarTray">
+            <button class="sidebarButton">Home</button>
+            <button class="sidebarButton">About</button>
+            <button class="sidebarButton">Contact Us</button>
+            <button class="sidebarButton">Help</button>
+            <button class="sidebarButton">More</button>
         </div>
-        <div>
-            <!-- Tray controller button-->
-        </div>
+    </div>
+    <div id="sidebarTrayPopper">
+        <!-- Tray controller button-->
+        <button id="sidebarPopper" onclick="PopSidebar()"><i id="arrow"class="arrow right"></i></button>
+    </div>
     </div>
 
 
-
     <script>
+        let isDirty = false;
 
+        function PopSidebar(){
+
+            let sidebar = document.getElementById("sidebarMaster");
+            let arrow = document.getElementById("arrow")
+
+            // Toggle value, if isDirty = true the tray is open.
+            
+
+            console.log(isDirty);
+
+            // Handle the toggle behaviour.
+            if(isDirty == true)
+            {
+                sidebar.style.marginLeft = "-200px";
+                // Clean the toggle after the tray is closed.
+                isDirty = false;
+
+                arrow.className = "arrow right";
+                
+            }
+            else{
+
+                sidebar.style.marginLeft = "0";
+                // Dirty the toggle after the tray is opened.
+                isDirty = true;
+
+                arrow.className = "arrow left";
+            }
+            console.log("attempting to pop out tray")
+        }
 
     </script>
 </body>

@@ -36,13 +36,14 @@
 
 .testContContent{
     display: inline-flex;
-    background-color: limegreen;
+    background-color: rgb(65, 236, 65);
     height: 235px;
     width: 100%;
 }
 
 .selected{
     background-color: limegreen;
+    ;
 }
 
 #text{
