@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercise</title>
+    <style>
+
+        /* GRID STYLING */
+
+        #grid{
+            display: flex;
+            justify-content: center;
+            padding: 100px;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            gap: 10px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .grid-container > div{
+            border: 2px solid black;
+            height: auto;
+            width: auto;
+        }
+
+        .activeTile{
+            background-color: red;
+        }
+        /* BUTTON STYLING */
+
+        .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        }
+
+        .right{
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        }
+
+        .left{
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        }
+        .up{
+        transform: rotate(225deg);
+        -webkit-transform: rotate(225deg);
+        }
+
+        .down{
+        transform: rotate(43deg);
+        -webkit-transform: rotate(43deg);
+        }
+
+        .center{
+            display:flex;
+            margin: 10px;
+            justify-content: center;
+            margin: -5px;
+        }
+
+        .btnDirect{
+            height: 25px;
+            width: 25px;
+            background-color: transparent;
+        }
+
+        .btnDirect:hover{
+            border: solid red;
+            border-width: 0 3px 3px 0;
+        }
+
+        .split{
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="grid">
+    <!-- GRID STRUC-->
+    <div class="grid-container">
+        <div id="c1"></div>
+        <div id="c2"></div>
+        <div id="c3"></div>
+        <div id="c4"></div>
+        <div id="c5"></div>
+        <div id="c6"></div>
+        <div id="c7"></div>
+        <div id="c8"></div>
+        <div id="c9"></div>
+    </div>
+    </div>
+
+    <!-- BUTTON STRUC-->
+    
+        <div id="button-struc-main">
+            <!-- TOP BUTTON / MOVE UP-->
+            <div class="center">
+                <button class="btnDirect arrow up" onclick="MoveActiveTile(`up`)"></button>
+            </div>
+            <!-- MIDDLE BUTTONS / MOVE LEFT AND RIGHT-->
+            <div class="center split">
+                    <button class="btnDirect arrow left split" onclick="MoveActiveTile(`left`)"></button>
+                    <button class="btnDirect arrow right split" onclick="MoveActiveTile(`right`)"></button>
+            </div>
+            <!-- BOTTOM BUTTONS / MOVE DOWN-->
+            <div class="center">
+                <button class="btnDirect arrow down" onclick="MoveActiveTile(`down`)"></button>
+            </div>
+
+        </div>
+
+    <script>
+
+        let activeTile = "c5";
+        SetActiveTile();
+        MoveActiveTile("up");
+        
+        function SetActiveTile(){
+
+          
+            tileElement = document.getElementById(activeTile);
+            tileElement.classList.add("activeTile");
+            console.log(activeTile);
+
+        }
+
+        function MoveActiveTile(direction){
+
+            if(activeTile == "c1")
+            {
+                //Do Nothing,
+            }
+            else if(activeTile == "c9")
+            {
+                //Do Nothing
+            }
+            if(direction == "up"){            
+            
+            oldActiveTile = document.getElementById(activeTile);
+            oldActiveTile.classList.remove("activeTile");
+
+            activeTile = parseInt(activeTile.slice(1)) - 3;
+            activeTile = "c" + activeTile.toString();
+            console.log(activeTile);
+            
+            SetActiveTile();
+            
+            // TODO: ADD ERROR CATCHES FOR EDGE MOVEMENTS
+            }
+            if(direction == "down"){            
+            
+            oldActiveTile = document.getElementById(activeTile);
+            oldActiveTile.classList.remove("activeTile");
+
+            activeTile = parseInt(activeTile.slice(1)) + 3;
+            activeTile = "c" + activeTile.toString();
+            console.log(activeTile);
+            
+            SetActiveTile();
+            
+            // TODO: ADD ERROR CATCHES FOR EDGE MOVEMENTS
+            }
+            if(direction == "left"){            
+            
+            oldActiveTile = document.getElementById(activeTile);
+            oldActiveTile.classList.remove("activeTile");
+
+            activeTile = parseInt(activeTile.slice(1)) - 1;
+            activeTile = "c" + activeTile.toString();
+            console.log(activeTile);
+            
+            SetActiveTile();
+            
+            // TODO: ADD ERROR CATCHES FOR EDGE MOVEMENTS
+            }
+            if(direction == "right"){            
+            
+            oldActiveTile = document.getElementById(activeTile);
+            oldActiveTile.classList.remove("activeTile");
+
+            activeTile = parseInt(activeTile.slice(1)) + 1;
+            activeTile = "c" + activeTile.toString();
+            console.log(activeTile);
+            
+            SetActiveTile();
+            
+            // TODO: ADD ERROR CATCHES FOR EDGE MOVEMENTS
+            }
+            
+    }
+
+    </script>
+</body>
+</html>
