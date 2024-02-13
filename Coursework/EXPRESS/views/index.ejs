@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <%=`This is some text in an EJS tag`%>
+    <style>
+        h1, p {
+            display:inline;
+        }
+
+    </style>
+
+    <p>Welcome <h1><%=data.Username%></h1>! You are now logged in! %> </p>
+
+
+
+    <script>
+        const data = res.session.data;
+
+    </script>
     <script src="./js/script.js"></script>
 </body>
 </html>
