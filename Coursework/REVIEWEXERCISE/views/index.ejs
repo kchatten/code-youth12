@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Exercise</title>
+</head>
+<body>
+    <style>
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    display:flex;
+    justify-content: center;
+}
+
+input{
+    width: 95%;
+    margin: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+button{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#MasterContainer{
+    border: 2px solid black;
+    border-radius: 5px;
+    max-height: 500px;
+    height: 50%;
+    max-width: 500px;
+    width: 50%;
+}
+
+#inpReview{
+    height:auto;
+    min-height: 40px;
+ 
+}
+    </style>
+
+
+
+
+<!-- MASTER CONTAINER-->    
+<div id="MasterContainer">
+
+    <!-- STAR PLACEHOLDER -->
+    <div></div>
+    <p> Give us a review!</p>
+    <!-- INPUT FORM -->
+    <form id="formReview" action="./submitreview" method="POST">
+    <div>
+        <input name="email" type="email" placeholder="Email"/>
+    </div>
+
+    <div>
+        <input name="ordernumber" type="text" placeholder="Order Number"/>
+    </div>
+
+    <div>
+        <input name="reviewtext" id="inpReview" type="text" placeholder="Review... (max 400 characters)"/>
+    </div>
+
+    <!-- SUBMIT BUTTON-->
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    </form>
+</div>
+
+</body>
+</html>
