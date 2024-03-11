@@ -52,7 +52,6 @@ async function WriteFile(file, data){
             if(err){
                 reject(err);
             }
-            
             resolve(true);
         })
     })
@@ -64,11 +63,9 @@ async function AppendFile(file, data){
             if(err){
                 reject(err);
             }
-            
             resolve(true);
         })
     })
 }
 
-// TODO: Figure out why its still writing to database.json instead of appending it when it already exists.
 // TODO: Add the 1 - 5 rating input to the form.
